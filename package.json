@@ -1,0 +1,17 @@
+{
+  "name": "mongogenerator",
+  "version": "1.0.0",
+  "description": "",
+  "main": "start.js",
+  "dependencies": {
+    "log4js": "^0.6.36",
+    "mongoose": "^4.4.17",
+    "q": "^1.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
