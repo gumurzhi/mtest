@@ -3,8 +3,9 @@ var mongoose = require('mongoose');
 var log4js = require('log4js');
 var logger = log4js.getLogger('lib/mongoose');
 var Q = require('q');
+var config = require('./config');
 
-var mongoUri =  "mongodb://localhost/appiniontest";
+var mongoUri =  config.mongoose.uri || "mongodb://localhost/appiniontest";
 logger.trace(mongoUri);
 mongoose.connect(mongoUri);
 
