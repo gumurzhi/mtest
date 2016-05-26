@@ -1,6 +1,6 @@
 module.exports = {
     "mongoose": {
-        "uri": "mongodb://repl_0_AppinionReplSet:27017,46.101.164.123:27017,46.101.213.229:27017/appiniontest",
+        "uri": "mongodb://repl_0_AppinionReplSet:27017,46.101.151.212:27017,46.101.164.123:27017,46.101.213.229:27017,46.101.138.23:27017/appinion",
         "options": {
             "maxPoolSize":1000,
             "server": {
@@ -20,5 +20,5 @@ module.exports = {
                 "slaveOk": true
             }
         }
-    }  
+    }
 };

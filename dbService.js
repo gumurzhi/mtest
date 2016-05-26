@@ -6,8 +6,10 @@ var Q = require('q');
 var config = require('./config');
 
 var mongoUri =  config.mongoose.uri || "mongodb://localhost/appiniontest";
+var mongoOptions = config.mongoose.options || {};
 logger.trace(mongoUri);
-mongoose.connect(mongoUri);
+mongoose.connect(mongoUri, mongoOptions);
+
 
 var db = mongoose.connection;
 db.on('error', function (err) {
@@ -17,7 +19,7 @@ db.on('error', function (err) {
 });
 db.on('disconnected', function() {
     logger.warn('MongoDB disconnected!');
-    mongoose.connect();
+    mongoose.connect(mongoUri, mongoOptions);
 });
 
 
@@ -64,7 +66,7 @@ DbService.prototype.fullCycleSearch = function (conditions, fields, sort, limit,
 };
 
 /**
- * 
+ *
  * @param {Object} aggregateField
  */
 DbService.prototype.aggregate = function (aggregateField) {
