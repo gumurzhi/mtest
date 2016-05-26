@@ -43,6 +43,7 @@ function bz() {
         })
     .catch(function(err){
         logger.error(err);
+        bz();
     });
 }
 bz();
